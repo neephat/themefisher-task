@@ -52,9 +52,7 @@ export async function getServerSideProps(context) {
   const repo = GITHUB_REPO;
   const path = MARKDOWN_SOURCE_PATH;
 
-  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(
-    path
-  )}`;
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
   try {
     const res = await fetch(url, {
       headers: { Accept: "application/vnd.github+json" },
